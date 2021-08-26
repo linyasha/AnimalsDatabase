@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Toolbar" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:windowActionModeOverlay">true</item>
+        <item name="android:background">@drawable/toolbar_gradient</item>
+        <item name="android:elevation">1dp</item>
+        <item name="titleTextColor">@android:color/white</item>
+    </style>
+
+    <style name="FilterIcon">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginEnd">12dp</item>
+        <item name="android:layout_gravity">end</item>
+        <item name="android:src">@drawable/ic_filter</item>
+        <item name="android:background">?android:attr/selectableItemBackgroundBorderless</item>
+    </style>
+
+    <style name="FloatingActionButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/fab_margin</item>
+        <item name="android:src">@drawable/ic_add</item>
+        <item name="backgroundTint">@color/blueG</item>
+        <item name="tint">@color/white</item>
+    </style>
+
+</resources>
