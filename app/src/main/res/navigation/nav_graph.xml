@@ -11,6 +11,9 @@
         <action
             android:id="@+id/action_listFragment_to_addAnimalFragment"
             app:destination="@id/addAnimalFragment" />
+        <action
+            android:id="@+id/action_listFragment_to_preferenceSettings"
+            app:destination="@id/preferenceSettings" />
     </fragment>
     <fragment
         android:id="@+id/addAnimalFragment"
@@ -44,5 +47,13 @@
             android:name="id_animal"
             app:argType="integer"
             android:defaultValue="-1" />
+    </fragment>
+    <fragment
+        android:id="@+id/preferenceSettings"
+        android:name="com.example.animalsdatabase.ui.common.preferences.PreferenceSettings"
+        android:label="PreferenceSettings" >
+        <action
+            android:id="@+id/action_preferenceSettings_to_listFragment"
+            app:destination="@id/listFragment" />
     </fragment>
 </navigation>

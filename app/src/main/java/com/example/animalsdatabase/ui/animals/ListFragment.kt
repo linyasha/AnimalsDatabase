@@ -1,5 +1,6 @@
 package com.example.animalsdatabase.ui.animals
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -16,6 +17,7 @@ import com.example.animalsdatabase.ui.common.ListFragmentViewModelFactory
 import com.example.animalsdatabase.ui.common.RecyclerViewFragment
 import com.example.animalsdatabase.ui.common.adapter.AnimalsAdapter
 import com.example.animalsdatabase.ui.common.dialogs.AlertDialog
+import com.example.animalsdatabase.ui.common.preferences.PreferenceSettings
 import com.example.animalsdatabase.utils.addDivider
 import kotlinx.android.synthetic.main.fragment_main.*
 import kotlinx.android.synthetic.main.recycler_view_layout.*
@@ -32,6 +34,9 @@ class ListFragment: RecyclerViewFragment(R.layout.fragment_main), AnimalClickLis
         fab.setOnClickListener {
             var action = ListFragmentDirections.actionListFragmentToAddAnimalFragment("", "", "")
             (activity as MainActivity).navController.navigate(action)
+        }
+        filter.setOnClickListener{
+            (activity as MainActivity).navController.navigate(R.id.action_listFragment_to_preferenceSettings)
         }
     }
 

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListPreference
+        android:key="sort_type"
+        android:title="Sorting order"
+        android:summary="Sets the sort order of the list of animals"
+        android:defaultValue="0"
+        android:entries="@array/sort_type"
+        android:entryValues="@array/sort_type"
+        android:dialogTitle="Select sort order"
+        android:icon="@drawable/ic_sort"/>
+</PreferenceScreen>

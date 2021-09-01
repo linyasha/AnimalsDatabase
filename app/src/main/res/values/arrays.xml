@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sort_type">
+        <item>By name(ASC)</item>
+        <item>By name(DESC)</item>
+        <item>By age(ASC)</item>
+        <item>By age(DESC)</item>
+        <item>By breed(ASC)</item>
+        <item>By breed(DESC)</item>
+    </string-array>
+</resources>
