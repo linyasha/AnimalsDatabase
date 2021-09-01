@@ -27,4 +27,57 @@
         <item name="tint">@color/white</item>
     </style>
 
+    <style name="Avatar">
+        <item name="android:layout_width">54sp</item>
+        <item name="android:layout_height">54sp</item>
+        <item name="android:textSize">23sp</item>
+        <item name="android:layout_marginStart">15dp</item>
+    </style>
+
+    <style name="RecyclerViewTextBold">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">"sans-serif-black"</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="NavigationToolbar" parent="Toolbar">
+        <item name="contentInsetStartWithNavigation">60dp</item>
+        <item name="navigationIcon">@drawable/ic_back</item>
+    </style>
+
+    <style name="AddAnimalInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="hintTextColor">?android:attr/textColorPrimary</item>
+        <item name="boxStrokeColor">@color/text_input_box_stroke</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="android:layout_marginStart">20dp</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_marginEnd">20dp</item>
+    </style>
+
+    <style name="AddAnimalNameEditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:inputType">text</item>
+    </style>
+
+    <style name="AddAnimalAgeEditText">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:maxLines">1</item>
+    <item name="android:inputType">number</item>
+    </style>
+
+    <style name="AddAnimalSpiner">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
 </resources>
