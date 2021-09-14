@@ -1,12 +1,15 @@
 package com.example.animalsdatabase.ui.animals
 
-import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
+import android.preference.PreferenceFragment
 import android.util.Log
+import android.view.LayoutInflater
 import android.view.View
-import androidx.core.view.isGone
+import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.preference.PreferenceManager
 import com.example.animalsdatabase.AnimalsDatabaseApp
 import com.example.animalsdatabase.R
 import com.example.animalsdatabase.model.Animal
@@ -17,16 +20,16 @@ import com.example.animalsdatabase.ui.common.ListFragmentViewModelFactory
 import com.example.animalsdatabase.ui.common.RecyclerViewFragment
 import com.example.animalsdatabase.ui.common.adapter.AnimalsAdapter
 import com.example.animalsdatabase.ui.common.dialogs.AlertDialog
-import com.example.animalsdatabase.ui.common.preferences.PreferenceSettings
 import com.example.animalsdatabase.utils.addDivider
 import kotlinx.android.synthetic.main.fragment_main.*
 import kotlinx.android.synthetic.main.recycler_view_layout.*
 
 class ListFragment: RecyclerViewFragment(R.layout.fragment_main), AnimalClickListener, AlertDialog.OnDialogResultListener {
     private val viewModel: ListFragmentViewModel by viewModels {
-        ListFragmentViewModelFactory(AnimalsDatabaseApp.INSTANCE.repository)
+        ListFragmentViewModelFactory(AnimalsDatabaseApp.INSTANCE.repository, prefs.getString(KEY_SORT, Animal.SORT_BY_CREATED_ASC) ?: "" )
     }
     private var currentAnimal: Animal? = null
+    private lateinit var prefs: SharedPreferences
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -35,13 +38,16 @@ class ListFragment: RecyclerViewFragment(R.layout.fragment_main), AnimalClickLis
             var action = ListFragmentDirections.actionListFragmentToAddAnimalFragment("", "", "")
             (activity as MainActivity).navController.navigate(action)
         }
-        filter.setOnClickListener{
+        setting.setOnClickListener{
             (activity as MainActivity).navController.navigate(R.id.action_listFragment_to_preferenceSettings)
         }
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        prefs = PreferenceManager.getDefaultSharedPreferences(context)
+        val currentSorting = prefs.getString(KEY_SORT, Animal.SORT_BY_CREATED_ASC)
+        viewModel.changeSort(currentSorting ?: Animal.SORT_BY_CREATED_ASC)
         val adapter = AnimalsAdapter(this,this)
         recyclerView.adapter = adapter
         recyclerView.addDivider()
@@ -79,5 +85,6 @@ class ListFragment: RecyclerViewFragment(R.layout.fragment_main), AnimalClickLis
 
     companion object {
         const val REQUEST_EDIT = 0
+        const val KEY_SORT = "sort_type"
     }
 }

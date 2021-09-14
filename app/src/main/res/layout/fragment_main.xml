@@ -14,8 +14,8 @@
             style="@style/Toolbar">
 
             <ImageView
-                android:id="@+id/filter"
-                style="@style/FilterIcon"/>
+                android:id="@+id/setting"
+                style="@style/SettingIcon"/>
 
         </androidx.appcompat.widget.Toolbar>
 

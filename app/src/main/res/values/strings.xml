@@ -13,4 +13,10 @@
     <string name="age">Age</string>
     <string name="breed">Breed</string>
     <string name="save">Save</string>
+    <string name="sorting_order">Sorting order</string>
+    <string name="sorting_text">Sort order of the list of animals</string>
+    <string name="database_type">Database type</string>
+    <string name="datebase_text">Database implementation in the application</string>
+    <string name="select_sort_order">Select sort order</string>
+    <string name="select_implementation_db">Select implementation of database</string>
 </resources>

@@ -7,5 +7,12 @@
         <item>By age(DESC)</item>
         <item>By breed(ASC)</item>
         <item>By breed(DESC)</item>
+        <item>By created(ASC)</item>
+        <item>By created(DESC)</item>
+    </string-array>
+
+    <string-array name="database_type">
+        <item>Room</item>
+        <item>Cursor(SQLite)</item>
     </string-array>
 </resources>

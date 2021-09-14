@@ -9,12 +9,12 @@
         <item name="titleTextColor">@android:color/white</item>
     </style>
 
-    <style name="FilterIcon">
+    <style name="SettingIcon">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginEnd">12dp</item>
         <item name="android:layout_gravity">end</item>
-        <item name="android:src">@drawable/ic_filter</item>
+        <item name="android:src">@drawable/ic_settings</item>
         <item name="android:background">?android:attr/selectableItemBackgroundBorderless</item>
     </style>
 

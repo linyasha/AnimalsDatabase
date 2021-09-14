@@ -2,11 +2,21 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     <ListPreference
         android:key="sort_type"
-        android:title="Sorting order"
-        android:summary="Sets the sort order of the list of animals"
-        android:defaultValue="0"
+        android:title="@string/sorting_order"
+        android:summary="@string/sorting_text"
+        android:defaultValue="By created(ASC)"
         android:entries="@array/sort_type"
         android:entryValues="@array/sort_type"
-        android:dialogTitle="Select sort order"
+        android:dialogTitle="@string/select_sort_order"
         android:icon="@drawable/ic_sort"/>
+
+    <ListPreference
+        android:key="database_type"
+        android:title="@string/database_type"
+        android:summary="@string/datebase_text"
+        android:defaultValue="Room"
+        android:entries="@array/database_type"
+        android:entryValues="@array/database_type"
+        android:dialogTitle="@string/select_implementation_db"
+        android:icon="@drawable/ic_book"/>
 </PreferenceScreen>

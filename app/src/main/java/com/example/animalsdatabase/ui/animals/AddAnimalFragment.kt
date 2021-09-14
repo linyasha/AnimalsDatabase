@@ -1,5 +1,6 @@
 package com.example.animalsdatabase.ui.animals
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -8,11 +9,13 @@ import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
+import androidx.preference.PreferenceManager
 import com.example.animalsdatabase.AnimalsDatabaseApp
 import com.example.animalsdatabase.R
 import com.example.animalsdatabase.model.Animal
 import com.example.animalsdatabase.ui.BaseFragment
 import com.example.animalsdatabase.ui.MainActivity
+import com.example.animalsdatabase.ui.animals.ListFragment.Companion.KEY_SORT
 import com.example.animalsdatabase.ui.common.ListFragmentViewModel
 import com.example.animalsdatabase.ui.common.ListFragmentViewModelFactory
 import com.example.animalsdatabase.utils.hideKeyboard
@@ -25,13 +28,15 @@ import kotlinx.coroutines.launch
 
 class AddAnimalFragment: BaseFragment(R.layout.fragment_add_item) {
     private val viewModel: ListFragmentViewModel by viewModels {
-        ListFragmentViewModelFactory(AnimalsDatabaseApp.INSTANCE.repository)
+        ListFragmentViewModelFactory(AnimalsDatabaseApp.INSTANCE.repository, prefs.getString(KEY_SORT, Animal.SORT_BY_CREATED_ASC) ?: "")
     }
     val args: AddAnimalFragmentArgs by navArgs()
+    private lateinit var prefs: SharedPreferences
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         val context = requireContext()
+        prefs = PreferenceManager.getDefaultSharedPreferences(context)
         name_edit.addTextChangedListener(object : TextWatcher {
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
                     save.isEnabled = s.isNotBlank() && age_edit.text!!.isNotBlank()

@@ -23,6 +23,15 @@ data class Animal(
                const val TYPE_BIRD: Byte = 2
                const val TYPE_FISH: Byte = 3
                const val TYPE_HUMSTER: Byte = 4
+
+                const val SORT_BY_NAME_ASC = "By name(ASC)"
+                const val SORT_BY_NAME_DESC = "By name(DESC)"
+                const val SORT_BY_AGE_ASC = "By age(ASC)"
+                const val SORT_BY_AGE_DESC = "By age(DESC)"
+                const val SORT_BY_BREED_ASC = "By breed(ASC)"
+                const val SORT_BY_BREED_DESC = "By breed(DESC)"
+                const val SORT_BY_CREATED_ASC = "By created(ASC)"
+                const val SORT_BY_CREATED_DESC = "By created(DESC)"
     }
 
 }
