@@ -21,7 +21,7 @@ interface AnimalsDao {
     @Query("SELECT * FROM animals ORDER BY name ASC")
     fun getAnimalsSortedByNameASC(): LiveData<List<Animal>>
 
-    @Query("SELECT * FROM animals ORDER BY createdAt DESC")
+    @Query("SELECT * FROM animals ORDER BY name DESC")
     fun getAnimalsSortedByNameDESC(): LiveData<List<Animal>>
 
     @Query("SELECT * FROM animals ORDER BY age ASC")
@@ -33,7 +33,7 @@ interface AnimalsDao {
     @Query("SELECT * FROM animals ORDER BY breed ASC")
     fun getAnimalsSortedByBreedASC(): LiveData<List<Animal>>
 
-    @Query("SELECT * FROM animals ORDER BY breed ASC")
+    @Query("SELECT * FROM animals ORDER BY breed DESC")
     fun getAnimalsSortedByBreedDESC(): LiveData<List<Animal>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
