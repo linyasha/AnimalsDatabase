@@ -28,7 +28,7 @@ import kotlinx.coroutines.launch
 
 class AddAnimalFragment: BaseFragment(R.layout.fragment_add_item) {
     private val viewModel: ListFragmentViewModel by viewModels {
-        ListFragmentViewModelFactory(AnimalsDatabaseApp.INSTANCE.repository, prefs.getString(KEY_SORT, Animal.SORT_BY_CREATED_ASC) ?: "")
+        ListFragmentViewModelFactory(AnimalsDatabaseApp.INSTANCE.repositoryRoom,prefs.getString(KEY_SORT, Animal.SORT_BY_CREATED_ASC) ?: "")
     }
     val args: AddAnimalFragmentArgs by navArgs()
     private lateinit var prefs: SharedPreferences

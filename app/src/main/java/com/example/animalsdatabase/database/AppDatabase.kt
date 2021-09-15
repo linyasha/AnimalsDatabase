@@ -6,6 +6,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.animalsdatabase.AnimalsDatabaseApp
+import com.example.animalsdatabase.database.room.AnimalsDaoRoom
 import com.example.animalsdatabase.model.Animal
 
 @Database(
@@ -14,7 +15,7 @@ import com.example.animalsdatabase.model.Animal
     version = 1)
 abstract class AppDatabase: RoomDatabase() {
 
-    abstract fun animals(): AnimalsDao
+    abstract fun animals(): AnimalsDaoRoom
 
     companion object {
         private const val TAG = "DataBase"

@@ -2,11 +2,7 @@ package com.example.animalsdatabase.ui.animals
 
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.preference.PreferenceFragment
-import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.preference.PreferenceManager
@@ -26,7 +22,7 @@ import kotlinx.android.synthetic.main.recycler_view_layout.*
 
 class ListFragment: RecyclerViewFragment(R.layout.fragment_main), AnimalClickListener, AlertDialog.OnDialogResultListener {
     private val viewModel: ListFragmentViewModel by viewModels {
-        ListFragmentViewModelFactory(AnimalsDatabaseApp.INSTANCE.repository, prefs.getString(KEY_SORT, Animal.SORT_BY_CREATED_ASC) ?: "" )
+        ListFragmentViewModelFactory(AnimalsDatabaseApp.INSTANCE.repositoryRoom, prefs.getString(KEY_SORT, Animal.SORT_BY_CREATED_ASC) ?: "" )
     }
     private var currentAnimal: Animal? = null
     private lateinit var prefs: SharedPreferences
